@@ -1,0 +1,18 @@
+/** 
+ * TODO Step 0: 
+ * Implement Navbar.css using the old_styles.css file
+ * Remember: styles in React use the component in their style name (ex: .navContainer --> .NavBar-container)
+ * .<old style> --> .<Component>-<style-name>
+ * 
+ */
+
+
+ .NavBar-container {
+    padding: var(--s) var(--m);
+    background-color: var(--primary);
+}
+
+.NavBar-title {
+    color: var(--white);
+    font-size: 1.2em;
+}
