@@ -12,5 +12,4 @@
 - A cute cat / dog? picture
 - When click the picture, Cat Happiness ++
 
-<img src="D:\learn_code\weblab\catbook-react\demo.gif" width="" height="" />
-
+![me](D:\learn_code\weblab\catbook-react\demo.gif)
