@@ -11,3 +11,5 @@
 
 - A cute cat / dog? picture
 - When click the picture, Cat Happiness ++
+  
+![demo](https://github.com/user-attachments/assets/56ee8b48-602c-4551-9653-22f9f045fff3)
