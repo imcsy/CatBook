@@ -21,4 +21,4 @@
 
 ![ezgif-2-a6f453349a](https://github.com/user-attachments/assets/6135202a-2326-473d-a9b0-2718ebee9c73)
 
-​	![image-20250122221902553](C:\Users\csy\AppData\Roaming\Typora\typora-user-images\image-20250122221902553.png)
+![image](https://github.com/imcsy/CatBook/blob/master/demo/mongoDB.png)
