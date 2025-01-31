@@ -4,19 +4,14 @@ import "./CatHappiness.css";
 /**
  * Component that renders cat happiness
  *
- * Props
+ * Proptypes
  * @param {int} catHappiness is how happy your cat is
  */
-
-const CatHappiness = (props) => { 
-  // TODO Step 1: Initialize state of CatHappiness
-
+const CatHappiness = (props) => {
   return (
     <div className="CatHappiness-container">
       <div className="CatHappiness-story">
-        <p className="CatHappiness-storyContent">
-          {props.CH}
-        </p>
+        <p className="CatHappiness-storyContent">{props.catHappiness}</p>
       </div>
     </div>
   );

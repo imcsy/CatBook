@@ -6,7 +6,7 @@
 | This file defines how your server starts up. Think of it as the main() of your server.
 | At a high level, this file does the following things:
 | - Connect to the database
-| - Sets up server middleware (i.e. addons that enable things like json parsing, user login)
+| - Sets up server middleware (i.e. addons that enable things like json parsing)
 | - Hooks up all the backend routes specified in api.js
 | - Fowards frontend routes that should be handled by the React router
 | - Sets up error handling in case something goes wrong when handling a request
@@ -19,25 +19,18 @@ const validator = require("./validator");
 validator.checkSetup();
 
 //import libraries needed for the webserver to work!
-const http = require("http");
-const bodyParser = require("body-parser"); // allow node to automatically parse POST body requests as JSON
 const express = require("express"); // backend framework for our node server.
-const session = require("express-session"); // library that stores info about each connected user
+const session = require("express-session"); // library that stores info about each connected user.
 const mongoose = require("mongoose"); // library to connect to MongoDB
 const path = require("path"); // provide utilities for working with file and directory paths
-const cors = require("cors"); // enable cross origin headers
 
 const api = require("./api");
 const auth = require("./auth");
-require("dotenv").config();
-
-// socket stuff
-const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your own database
-// THIS IS HIDDEN IN A DOTENV FILE
-const mongoConnectionURL = process.env.mongoURL;
+const mongoConnectionURL =
+  "mongodb+srv://chillic66:7.BHJFm.mhbuR2X@cluster0.xd4mb.mongodb.net/";
 // TODO change database name to the name you chose
 const databaseName = "catbook";
 
@@ -55,17 +48,13 @@ mongoose
 const app = express();
 app.use(validator.checkRoutes);
 
-// Enable cross origin requests
-app.use(cors());
-
 // set up bodyParser, which allows us to process POST requests
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 // set up a session, which will persist login data across requests
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: "session-secret",
     resave: false,
     saveUninitialized: false,
   })
@@ -74,7 +63,7 @@ app.use(
 // this checks if the user is logged in, and populates "req.user"
 app.use(auth.populateCurrentUser);
 
-// connect user-defined routes
+// connect API routes to the file ./api.js
 app.use("/api", api);
 
 // load the compiled react files, which will serve /index.html and /bundle.js
@@ -103,10 +92,7 @@ app.use((err, req, res, next) => {
 });
 
 // hardcode port to 3000 for now
-const port = process.env.PORT || 3000;
-const server = http.Server(app);
-socketManager.init(server);
-
-server.listen(port, () => {
+const port = 3000;
+app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
