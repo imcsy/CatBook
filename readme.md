@@ -19,3 +19,7 @@
 - After logging in, users can post stories and comments.    
 - Logged-in users can view their profile information.  
 - When click the picture, Cat Happiness ++ 
+
+![Login Demo](https://github.com/imcsy/CatBook/blob/master/demo/login.mp4)
+
+![Story Demo](https://github.com/imcsy/CatBook/blob/master/demo/story.mp4)
