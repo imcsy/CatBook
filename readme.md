@@ -1,4 +1,4 @@
-## Catbook Webpage
+## Catbook (frontend & backend)
 
 #### IMPLEMENTATION
 
