@@ -30,7 +30,7 @@ const auth = require("./auth");
 // Server configuration below
 // TODO change connection URL after setting up your own database
 const mongoConnectionURL =
-  "mongodb+srv://chillic66:7.BHJFm.mhbuR2X@cluster0.xd4mb.mongodb.net/";
+  "mongodb+srv://chillic66:password@cluster0.xd4mb.mongodb.net/";
 // TODO change database name to the name you chose
 const databaseName = "catbook";
 
